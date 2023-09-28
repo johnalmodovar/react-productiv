@@ -27,6 +27,7 @@ function TodoForm({ initialFormData, handleSave }) {
     }));
   }
 
+  //TODO: figure out how formData is working when todoform is called on editabletodo
   /** Call parent function and clear form. */
   function handleSubmit(evt) {
     evt.preventDefault();

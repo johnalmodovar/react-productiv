@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
-import { useState } from "react";
 
 /** Show editable todo item.
  *
@@ -19,6 +18,7 @@ import { useState } from "react";
 function EditableTodo({ todo, update, remove }) {
   const [isEditing, setIsEditing] = useState(false);
 
+
   /** Toggle if this is being edited */
   function toggleEdit() {
     setIsEditing(!isEditing);
@@ -26,14 +26,13 @@ function EditableTodo({ todo, update, remove }) {
 
   /** Call remove fn passed to this. */
   function handleDelete() {
-    remove();
-    //FIXME:
+    remove(todo.id);
   }
 
   /** Edit form saved; toggle isEditing and update in ancestor. */
   function handleSave(formData) {
 //FIXME:
-    toggleEdit();
+    setIsEditing(false);
     update(formData);
   }
 
