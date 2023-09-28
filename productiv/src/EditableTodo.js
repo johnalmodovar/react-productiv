@@ -15,13 +15,19 @@ import TodoForm from "./TodoForm";
 function EditableTodo() {
 
   /** Toggle if this is being edited */
-  function toggleEdit() { }
+  function toggleEdit() {
+    //TODO:
+  }
 
   /** Call remove fn passed to this. */
-  function handleDelete() { }
+  function handleDelete() {
+    //TODO:
+  }
 
   /** Edit form saved; toggle isEditing and update in ancestor. */
-  function handleSave(formData) { }
+  function handleSave(formData) {
+    //TODO:
+   }
 
   return (
       <div className="EditableTodo">

@@ -16,17 +16,21 @@ import EditableTodoList from "./EditableTodoList";
  */
 
 function TodoApp() {
+  const [todos, setTodos] = useState([]);
 
   /** add a new todo to list */
   function create(newTodo) {
+    //TODO:
   }
 
   /** update a todo with updatedTodo */
   function update(updatedTodo) {
+    //TODO:
   }
 
   /** delete a todo by id */
   function remove(id) {
+    //TODO:
   }
 
   return (
