@@ -14,14 +14,12 @@ import TodoForm from "./TodoForm";
  *
  * EditableTodoList -> EditableTodo -> { Todo, TodoForm }
  */
-
 function EditableTodo({ todo, update, remove }) {
   const [isEditing, setIsEditing] = useState(false);
 
-
   /** Toggle if this is being edited */
   function toggleEdit() {
-    setIsEditing(!isEditing);
+    setIsEditing(true);
   }
 
   /** Call remove fn passed to this. */
@@ -31,15 +29,16 @@ function EditableTodo({ todo, update, remove }) {
 
   /** Edit form saved; toggle isEditing and update in ancestor. */
   function handleSave(formData) {
-//FIXME:
     setIsEditing(false);
     update(formData);
   }
 
+
   return (
     <div className="EditableTodo">
-      {isEditing === true ? <TodoForm initialFormData={todo} handleSave={handleSave} /> :
-        <div className="mb-3">
+      {isEditing === true
+        ? <TodoForm initialFormData={todo} handleSave={handleSave} />
+        : <div className="mb-3">
           <div className="float-end text-sm-end">
             <button
               className="EditableTodo-toggle btn-link btn btn-sm"
@@ -52,7 +51,11 @@ function EditableTodo({ todo, update, remove }) {
               Del
             </button>
           </div>
-          <Todo {...todo} />
+
+          <Todo
+            title={todo.title}
+            description={todo.description}
+            priority={todo.priority} />
         </div>
       }
     </div>
