@@ -17,8 +17,8 @@ function App() {
           <div className="container">
             <h1>Prøductïv</h1>
             <p className="lead">The best name in todo list management.</p>
+            <QuoteHandler />
           </div>
-          <QuoteHandler />
         </header>
 
         <section className="container mt-4">

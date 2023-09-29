@@ -23,9 +23,11 @@ function QuoteHandler() {
   }
 
   return (
-    <div className="QuoteHandler">
+    <div className="QuoteHandler text-md-end mb-3">
       {(quote) && <Quote text={quote} />}
-      <button onClick={getQuote}>
+      <button
+        className="btn btn-warning"
+        onClick={getQuote}>
         {(quote) ? "Nu Quote" : "Click here for an inspirational quote!"}
       </button>
     </div>
