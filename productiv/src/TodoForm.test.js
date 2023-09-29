@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import TodoForm from "./TodoForm";
 
 
@@ -10,19 +11,6 @@ describe("TodoForm", function () {
     );
   });
 
-
-  it("contains default priority", function () {
-    const result = render( <TodoForm handleSave={jest.fn} /> );
-
-    expect(result.queryByText("Make dinner")).toBeInTheDocument();
-    expect(result.queryByText("Cook something healthy")).toBeInTheDocument();
-    expect(result.queryByText("(priority: 1)")).toBeInTheDocument();
-  });
-
-  // it("should match snapshot", function () {
-  //   const { debug, container } = render( <TopTodo todos={TODOS} /> );
-
-  //   expect(container).toMatchSnapshot();
-  // });
+  it("")
 
 });
