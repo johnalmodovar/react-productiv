@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
+import "./EditableTodo.css";
 
 /** Show editable todo item.
  *
@@ -16,6 +17,7 @@ import TodoForm from "./TodoForm";
  */
 function EditableTodo({ todo, update, remove }) {
   const [isEditing, setIsEditing] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   /** Toggle if this is being edited */
   function toggleEdit() {
@@ -24,6 +26,11 @@ function EditableTodo({ todo, update, remove }) {
 
   /** Call remove fn passed to this. */
   function handleDelete() {
+    setIsDeleted(true);
+    setTimeout(handleRemove, 500)
+  }
+
+  function handleRemove() {
     remove(todo.id);
   }
 
@@ -35,7 +42,7 @@ function EditableTodo({ todo, update, remove }) {
 
 
   return (
-    <div className="EditableTodo">
+    <div className={`EditableTodo ${isDeleted ? "hidden" : ""}`}>
       {isEditing === true
         ? <TodoForm initialFormData={todo} handleSave={handleSave} />
         : <div className="mb-3">

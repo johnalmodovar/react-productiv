@@ -37,7 +37,7 @@ function TodoForm({ initialFormData, handleSave }) {
 
       <div className="mb-3">
         <input
-          required="true"
+          required={true}
           id="newTodo-title"
           name="title"
           className="form-control"

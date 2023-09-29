@@ -1,0 +1,7 @@
+.EditableTodo {
+  transition: 500ms;
+}
+
+.hidden {
+  opacity: 0;
+}
